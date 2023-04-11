@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="portatil_action" model="ir.actions.act_window">
+        <field name="name">portatil</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">portatil</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="portatil_view_form" model="ir.ui.view">
+        <field name="name">portatil</field>
+        <field name="model">portatil</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <group>
+                    <field name="modelo" />
+                    <field name="marca" />
+                    <field name="imagen" widget='image'/>
+                    <field name="resolucion" />
+                    <field name="frecuencia" />
+                    <field name="tamaño" />
+                    <field name="peso" />
+                    <field name="RAM" />
+                    <field name="HDD" />
+                    <field name="SSD" />
+                    <field name="grafica" />
+                    <field name="USB3" />
+                    <field name="USB2" />
+                    <field name="placa_base" />
+                    <field name="lector_discos" />
+                    <field name="tactil" />
+                    <field name="tablet" />
+                    <field name="wifi" />
+                    <field name="cable_red" />
+                    <field name="bluetooth" />
+                    <field name="HDMI" />
+                    <field name="VGA" />
+                    <field name="DPORT" />
+                    <field name="miniDPORT" />
+                    <field name="thunderbolt" />
+                    <field name="jack" />
+                    <field name="SIM" />
+                    <field name="cantidad" />
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="portatil_view_tree" model="ir.ui.view">
+        <field name="name">portatil</field>
+        <field name="model">portatil</field>
+        <field name="arch" type="xml">
+            <tree string="">
+                <field name="modelo" />
+                <field name="marca" />
+                <field name="imagen" widget='image' />
+                <field name="resolucion" />
+                <field name="frecuencia" />
+                <field name="tamaño" />
+                <field name="peso" />
+                <field name="RAM" />
+                <field name="HDD" />
+                <field name="SSD" />
+                <field name="grafica" />
+                <field name="USB3" />
+                <field name="USB2" />
+                <field name="placa_base" />
+                <field name="lector_discos" />
+                <field name="tactil" />
+                <field name="tablet" />
+                <field name="wifi" />
+                <field name="cable_red" />
+                <field name="bluetooth" />
+                <field name="HDMI" />
+                <field name="VGA" />
+                <field name="DPORT" />
+                <field name="miniDPORT" />
+                <field name="thunderbolt" />
+                <field name="jack" />
+                <field name="SIM" />
+                <field name="cantidad" />
+            </tree>
+        </field>
+    </record>
+
+</odoo>

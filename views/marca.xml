@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="marca_action" model="ir.actions.act_window">
+        <field name="name">marca</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">marca</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="marca_view_form" model="ir.ui.view">
+        <field name="name">marca</field>
+        <field name="model">marca</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <group>
+                    <field name="nombre" />
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="marca_view_tree" model="ir.ui.view">
+        <field name="name">marca</field>
+        <field name="model">marca</field>
+        <field name="arch" type="xml">
+            <tree string="">
+                <field name="nombre" />
+            </tree>
+        </field>
+    </record>
+
+</odoo>

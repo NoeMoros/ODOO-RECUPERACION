@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="usuario_action" model="ir.actions.act_window">
+        <field name="name">usuario</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">usuario</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    
+    <record id="usuario_view_form" model="ir.ui.view">
+        <field name="name">usuario</field>
+        <field name="model">usuario</field>
+        <field name="arch" type="xml">
+            <form string="Usuario">
+                <sheet>
+                    <group string="Datos básicos">
+                        <group string="Necesario">
+                            <field name="nombre" />
+                            <field name="dni" />
+                            <field name="email" />
+                            <field name="telefono" />
+                            <field name="vendedor"/>
+                        </group>
+                        <group string="Imagen de perfil">
+                            <field name="imagen" widget="image"/>
+                        </group>
+                    </group>
+                    <group string="producto">
+                        <field name="producto"/>
+                        <field name="venta"/>
+                    </group>
+                    <group string="Compras">
+                        <field name="compras" />
+                    </group>
+                    <group>
+                        <field name="chats" />
+                        <field name="reviews"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="usuario_view_tree" model="ir.ui.view">
+        <field name="name">usuario</field>
+        <field name="model">usuario</field>
+        <field name="arch" type="xml">
+            <tree string="usuario">
+                <field name="nombre" />
+                <field name="dni" />
+                <field name="email" />
+                <field name="telefono" /> 
+                <field name="vendedor" />
+            </tree>
+        </field>
+    </record>
+</odoo>

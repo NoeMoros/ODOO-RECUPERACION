@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="mensaje_action" model="ir.actions.act_window">
+        <field name="name">mensaje</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">mensaje</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    
+    <record id="mensaje_view_form" model="ir.ui.view">
+        <field name="name">mensaje</field>
+        <field name="model">mensaje</field>
+        <field name="arch" type="xml">
+            <form string="mensaje">
+                <group>
+                    <field name="texto" />
+                    <field name="fecha" />
+                    <field name="chat" />
+                    <field name="usuario" />
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="mensaje_view_tree" model="ir.ui.view">
+        <field name="name">mensaje</field>
+        <field name="model">mensaje</field>
+        <field name="arch" type="xml">
+            <tree string="mensaje">
+                <field name="usuario" />
+                <field name="texto" />
+                <field name="fecha" />
+            </tree>
+        </field>
+    </record>
+</odoo>

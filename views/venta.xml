@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="venta_action" model="ir.actions.act_window">
+        <field name="name">venta</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">venta</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="transacciones_view_form" model="ir.ui.view">
+        <field name="name">venta</field>
+        <field name="model">venta</field>
+        <field name="arch" type="xml">
+            <form string="venta">
+                <sheet>
+                    <group name="Comprador">
+                        <field name="comprador" />
+                    </group>
+                    <group name="producto">
+                        <field name="producto" />
+                    </group>
+                    <group name="Vendedor">
+                        <field name="vendedor" />
+                    </group>
+                    <group name="Compra">
+                        <field name="precio" />
+                        <field name="fecha_venta" />
+                    </group>
+                    <group name="Review">
+                        <field name="review" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="transacciones_view_tree" model="ir.ui.view">
+        <field name="name">venta</field>
+        <field name="model">venta</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="comprador" />
+                <field name="producto" />
+                <field name="vendedor" />
+                <field name="precio" />
+                <field name="fecha_venta" />
+                <field name="review" />
+            </tree>
+        </field>
+    </record>
+
+</odoo>

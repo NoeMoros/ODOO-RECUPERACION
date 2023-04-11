@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="producto_action" model="ir.actions.act_window">
+        <field name="name">producto</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">producto</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="producto_view_form" model="ir.ui.view">
+        <field name="name">producto</field>
+        <field name="model">producto</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <group>
+                    <field name="portatil" />
+                    <field name="precio" />
+                    <field name="estado" />
+                    <field name="SO" />
+                    <field name="fechaSubida" />
+                    <field name="vendedor" />
+                    <field name="venta" />
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="producto_view_tree" model="ir.ui.view">
+        <field name="name">producto</field>
+        <field name="model">producto</field>
+        <field name="arch" type="xml">
+            <tree string="">
+                <field name="precio" />
+                <field name="estado" />
+                <field name="SO" />
+                <field name="fechaSubida" />
+                <field name="vendedor" />
+                <field name="venta" />
+            </tree>
+        </field>
+    </record>
+
+</odoo>

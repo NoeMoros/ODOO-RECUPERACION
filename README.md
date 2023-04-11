@@ -1,1 +1,3 @@
-# ODOO-RECUPERACION
+Modelo de odoo estilo Wallapop
+
+Participantes: Jon, Federico, Daniel

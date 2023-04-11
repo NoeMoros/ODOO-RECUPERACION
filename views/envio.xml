@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="envio_action" model="ir.actions.act_window">
+        <field name="name">envio</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">envio</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="envio_view_form" model="ir.ui.view">
+        <field name="name">envio</field>
+        <field name="model">envio</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <group>
+                    <field name="venta" />
+                    <field name="origen" />
+                    <field name="destino" />
+                    <field name="estado" />
+                    <field name="compañia" />
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="envio_view_tree" model="ir.ui.view">
+        <field name="name">envio</field>
+        <field name="model">envio</field>
+        <field name="arch" type="xml">
+            <tree string="">
+                <field name="venta" />
+                <field name="origen" />
+                <field name="destino" />
+                <field name="estado" />
+                <field name="compañia" />
+            </tree>
+        </field>
+    </record>
+
+</odoo>
