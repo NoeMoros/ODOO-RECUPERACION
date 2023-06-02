@@ -28,6 +28,8 @@
         'views/producto.xml',
         'views/usuario.xml',
         'views/venta.xml',
+        'views/devoluciones.xml',
         'views/menus.xml',
+        'views/periferico.xml',
     ],
 }

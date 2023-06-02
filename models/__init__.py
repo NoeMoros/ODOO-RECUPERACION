@@ -1,1 +1,1 @@
-from . import chat, envio, marca, mensaje, portatil, post_venta, producto, usuario, venta
+from . import chat, envio, marca, mensaje, periferico, portatil, post_venta, producto, usuario, venta, devoluciones

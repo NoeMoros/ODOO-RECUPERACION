@@ -14,6 +14,7 @@ class venta(models.Model):
     ventas_review = fields.One2many('post_venta', 'venta')
     producto = fields.Many2one('producto', compute='compute_ventas_producto', inverse='ventas_producto_inverse', string='Producto', unique=True, required=True)
     ventas_producto = fields.One2many('producto', 'venta')
+    devoluciones = fields.One2many('devolucion', 'venta')
 
     @api.onchange('producto')
     def _onchange_producto(self):

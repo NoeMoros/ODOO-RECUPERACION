@@ -14,10 +14,11 @@
         <field name="arch" type="xml">
             <form string="">
                 <group>
-                    <field name="portatil" />
+                    <field name="tipo_producto"/>
+                    <field name="portatil" attrs="{'readonly': [('tipo_producto', '=', True)]}"/>
+                    <field name="periferico" attrs="{'readonly': [('tipo_producto', '=', False)]}"/>
                     <field name="precio" />
                     <field name="estado" />
-                    <field name="SO" />
                     <field name="fechaSubida" />
                     <field name="vendedor" />
                     <field name="venta" />
@@ -31,12 +32,14 @@
         <field name="model">producto</field>
         <field name="arch" type="xml">
             <tree string="">
-                <field name="precio" />
-                <field name="estado" />
-                <field name="SO" />
-                <field name="fechaSubida" />
-                <field name="vendedor" />
-                <field name="venta" />
+                    <field name="tipo_producto"/>
+                    <field name="portatil" />
+                    <field name="periferico" />
+                    <field name="precio" />
+                    <field name="estado" />
+                    <field name="fechaSubida" />
+                    <field name="vendedor" />
+                    <field name="venta" />
             </tree>
         </field>
     </record>

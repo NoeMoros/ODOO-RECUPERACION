@@ -3,6 +3,7 @@
     
     <menuitem id="prueba_menu_root" name="Recu2"/>
 
+
         <menuitem id="usuario_menu_act" name="usuario" parent="prueba_menu_root" action="usuario_action"/>
 
         <menuitem id="producto_menu_act" name="producto" parent="prueba_menu_root" action="producto_action"/>
@@ -16,9 +17,15 @@
         <menuitem id="mensaje_menu_act" name="mensaje" parent="prueba_menu_root" action="mensaje_action"/>
 
         <menuitem id="portatil_menu_act" name="portatil" parent="prueba_menu_root" action="portatil_action"/>
+        
+        <menuitem id="periferico_menu_act" name="periferico" parent="prueba_menu_root" action="periferico_action"/>
+        
 
         <menuitem id="chat_menu_act" name="chat" parent="prueba_menu_root" action="chat_action"/>
 
         <menuitem id="post_venta_menu_act" name="post_venta" parent="prueba_menu_root" action="post_venta_action"/>
+
+        <menuitem id="devolucion_menu_act" name="devolucion" parent="prueba_menu_root" action="devolucion_action"/>
+        
 
 </odoo>
