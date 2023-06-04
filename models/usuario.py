@@ -14,7 +14,8 @@ class usuario(models.Model):
     venta = fields.One2many('venta', 'vendedor', string='ventas')
     vendedor = fields.Boolean(string='Vendedor', compute='_vendedor')
     reviews = fields.One2many('post_venta', 'vendedor', string='Reviews')
-    compras = fields.One2many('venta', 'comprador', string='Compras')
+    compra_portatiles = fields.One2many('venta', 'comprador', string='Compras')
+    compra_perifericos = fields.One2many('venta_periferico', 'comprador', string='Compras')
     chats = fields.Many2many('chat', string='Chats')
     
     @api.depends('producto')

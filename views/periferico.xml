@@ -38,4 +38,26 @@
             </tree>
         </field>
     </record>
+    <record id="periferico_view_search" model="ir.ui.view">
+        <field name="name">periferico.view.search</field>
+        <field name="model">periferico</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="periferico" string="Busca por periferico"/>
+                <field name="modelo" string="Busca por modelo"/>
+                <field name="marca" string="Busca por marca"/>
+
+                <filter name="precio" string="precio menor que 10" domain="[('precio', '&lt;=', '10')]"/>
+                <filter name="precio" string="precio menor que 20" domain="[('precio', '&lt;=', '20')]"/>
+                <filter name="precio" string="precio menor que 40" domain="[('precio', '&lt;=', '40')]"/>
+                <filter name="precio" string="precio menor que 60" domain="[('precio', '&lt;=', '60')]"/>
+                <filter name="precio" string="precio menor que 80" domain="[('precio', '&lt;=', '80')]"/>
+                <filter name="precio" string="precio menor que 100" domain="[('precio','&lt;=', '100')]"/>
+                <filter name="precio" string="precio mayor que 100" domain="[('precio','&gt;', '100')]"/>
+                <searchpanel>
+                    <field name="marca" string="Marcas"/>
+                </searchpanel>
+            </search>
+        </field>
+    </record>
 </odoo>

@@ -14,17 +14,18 @@
         <field name="arch" type="xml">
             <form string="">
                 <group>
-                    <field name="tipo_producto"/>
-                    <field name="portatil" attrs="{'readonly': [('tipo_producto', '=', True)]}"/>
-                    <field name="periferico" attrs="{'readonly': [('tipo_producto', '=', False)]}"/>
+                    <field name="portatil"/>
                     <field name="precio" />
                     <field name="estado" />
+                    <field name="SO" />
                     <field name="fechaSubida" />
                     <field name="vendedor" />
+                    <field name="comprador" />
                     <field name="venta" />
                 </group>
             </form>
         </field>
+        
     </record>
 
     <record id="producto_view_tree" model="ir.ui.view">
@@ -32,16 +33,35 @@
         <field name="model">producto</field>
         <field name="arch" type="xml">
             <tree string="">
-                    <field name="tipo_producto"/>
                     <field name="portatil" />
-                    <field name="periferico" />
                     <field name="precio" />
                     <field name="estado" />
+                    <field name="SO" />
                     <field name="fechaSubida" />
                     <field name="vendedor" />
+                    <field name="comprador" />
                     <field name="venta" />
             </tree>
         </field>
     </record>
-
+        <record id="producto_view_search" model="ir.ui.view">
+        <field name="name">producto.view.search</field>
+        <field name="model">producto</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="portatil" string="Busca por portail"/>
+                 <filter name="precio" string="precio menor que 200" domain="[('precio', '&lt;=', '200')]"/>
+                <filter name="precio" string="precio menor que 300" domain="[('precio', '&lt;=', '300')]"/>
+                <filter name="precio" string="precio menor que 400" domain="[('precio', '&lt;=', '400')]"/>
+                <filter name="precio" string="precio menor que 600" domain="[('precio', '&lt;=', '600')]"/>
+                <filter name="precio" string="precio menor que 800" domain="[('precio', '&lt;=', '800')]"/>
+                <filter name="precio" string="precio menor que 1000" domain="[('precio','&lt;=', '1000')]"/>
+                <filter name="precio" string="precio mayor que 1000" domain="[('precio','&gt;', '1000')]"/>
+                
+                <searchpanel>
+                    <field name="SO" string="SO"/>
+                </searchpanel>
+            </search>
+        </field>
+    </record>
 </odoo>

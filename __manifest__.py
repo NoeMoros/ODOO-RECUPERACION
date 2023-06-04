@@ -31,5 +31,8 @@
         'views/devoluciones.xml',
         'views/menus.xml',
         'views/periferico.xml',
+        'views/perifericos.xml',
+        'views/venta_periferico.xml',
+        'views/devolucionesPeriferico.xml',
     ],
 }

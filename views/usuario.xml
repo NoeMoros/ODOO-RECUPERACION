@@ -30,7 +30,8 @@
                         <field name="venta"/>
                     </group>
                     <group string="Compras">
-                        <field name="compras" />
+                        <field name="compra_portatiles" />
+                        <field name="compra_perifericos" />
                     </group>
                     <group>
                         <field name="chats" />

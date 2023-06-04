@@ -33,4 +33,17 @@
             </tree>
         </field>
     </record>
+        <record id="mensaje_view_search" model="ir.ui.view">
+        <field name="name">mensaje.view.search</field>
+        <field name="model">mensaje</field>
+        <field name="arch" type="xml">
+            <search>
+            <field name="usuario"/>
+            <field name="chat"/>
+                <searchpanel>
+                    <field name="chat" string="Chats"/>
+                </searchpanel>
+            </search>
+        </field>
+    </record>
 </odoo>

@@ -1,30 +1,23 @@
 from odoo import models, fields, api
 
-class venta(models.Model):
-    _name = "venta"
+class venta_periferico(models.Model):
+    _name = "venta_periferico"
     _rec_name = "nombre"
-    _description = "venta"
+    _description = "venta_periferico"
 
     nombre = fields.Char(string="Registro", compute='_dependecias')
     comprador = fields.Many2one('usuario', required=True)
     vendedor = fields.Many2one('usuario', required=True)
     precio = fields.Integer(string='Precio', required=True)
     fecha_venta = fields.Date(string="Fecha de venta", required=True)
-    review = fields.Many2one('post_venta', compute='compute_ventas_review', inverse='ventas_review_inverse', string='Review', store=True)
-    ventas_review = fields.One2many('post_venta', 'venta')
-    producto = fields.Many2one('producto', compute='compute_ventas_producto', inverse='ventas_producto_inverse', string='Producto', unique=True, required=True)
-    ventas_producto = fields.One2many('producto', 'venta')
-    devoluciones = fields.One2many('devolucion', 'venta')
+    perifericos = fields.Many2one('perifericos', compute='compute_ventas_producto', inverse='ventas_producto_inverse', string='Producto', unique=True, required=True)
+    ventas_producto = fields.One2many('perifericos', 'venta')
+    devoluciones = fields.One2many('devoluciones', 'venta')
 
-    @api.onchange('producto')
+    @api.onchange('perifericos')
     def _onchange_producto(self):
-        if self.producto:
+        if self.perifericos:
             self.vendedor = self.producto.vendedor
-
-    @api.depends('ventas_review')
-    def compute_ventas_review(self):
-        if len(self.ventas_review) > 0:
-            self.review = self.ventas_review[0]
 
     def ventas_review_inverse(self):
         if len(self.ventas_review) > 0:
@@ -34,10 +27,11 @@ class venta(models.Model):
         # set new reference
         self.review.venta = self
 
+    
     @api.depends('ventas_producto')
     def compute_ventas_producto(self):
         if len(self.ventas_producto) > 0:
-            self.producto = self.ventas_producto[0]
+            self.perifericos = self.ventas_producto[0]
 
     def ventas_producto_inverse(self):
         if len(self.ventas_producto) > 0:
@@ -47,10 +41,10 @@ class venta(models.Model):
         # set new reference
         self.producto.venta = self
     
-    @api.depends('comprador', 'vendedor', 'producto', 'fecha_venta', 'precio')
+    @api.depends('comprador', 'vendedor', 'perifericos', 'fecha_venta', 'precio')
     def _dependecias(self):
         for record in self:
-            record.nombre = str(record.comprador.nombre) + ' compro el producto ' + str(record.producto.portatil) + ' de ' + str(record.vendedor.nombre) + ' por ' + str(record.precio) + '€' + ' el dia ' + str(record.fecha_venta)
+            record.nombre = str(record.comprador.nombre) + ' compro el producto ' + str(record.perifericos) + ' de ' + str(record.vendedor.nombre) + ' por ' + str(record.precio) + '€' + ' el dia ' + str(record.fecha_venta)
    
     @api.onchange('vendedor')
     def _onchange_vendedor(self):
@@ -59,7 +53,7 @@ class venta(models.Model):
                 if self.vendedor.vendedor == False:
                     raise ValueError("El usuario no es vendedor")
                 else:
-                    self.producto = self.vendedor.productos[0]
+                    self.perifericos = self.vendedor.productos[0]
         except:
             return {
                 'warning': {
@@ -68,11 +62,11 @@ class venta(models.Model):
                 }
             }
         
-    @api.onchange('producto')
+    @api.onchange('perifericos')
     def _onchange_producto(self):
         try:
-            if self.producto:
-                if self.producto.venta:
+            if self.perifericos:
+                if self.perifericos.venta:
                     raise ValueError("El producto ya ha sido vendido")
                 else:
                     self.vendedor = self.producto.vendedor
@@ -98,11 +92,11 @@ class venta(models.Model):
                 }
             }
 
-    @api.onchange('producto', 'vendedor')
+    @api.onchange('perifericos', 'vendedor')
     def _onchange_producto_vendedor(self):
         try:
-            if self.producto and self.vendedor:
-                if self.producto.vendedor != self.vendedor:
+            if self.perifericos and self.vendedor:
+                if self.perifericos.vendedor != self.vendedor:
                     raise ValueError("El producto no pertenece al vendedor") 
         except:
             return {

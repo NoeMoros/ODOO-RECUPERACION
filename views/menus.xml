@@ -8,7 +8,11 @@
 
         <menuitem id="producto_menu_act" name="producto" parent="prueba_menu_root" action="producto_action"/>
 
+        <menuitem id="perifericos_menu_act" name="perifericos" parent="prueba_menu_root" action="perifericos_action"/>
+
         <menuitem id="transacciones_menu_act" name="venta" parent="prueba_menu_root" action="venta_action"/>
+
+        <menuitem id="venta_perifericos_menu_act" name="venta_periferico" parent="prueba_menu_root" action="venta_periferico_action"/>
 
         <menuitem id="envio_menu_act" name="envio" parent="prueba_menu_root" action="envio_action"/>
 
@@ -26,6 +30,8 @@
         <menuitem id="post_venta_menu_act" name="post_venta" parent="prueba_menu_root" action="post_venta_action"/>
 
         <menuitem id="devolucion_menu_act" name="devolucion" parent="prueba_menu_root" action="devolucion_action"/>
+
+        <menuitem id="devoluciones_menu_act" name="devoluciones" parent="prueba_menu_root" action="devolucionPeriferico_action"/>
         
 
 </odoo>

@@ -46,42 +46,26 @@
             </form>
         </field>
     </record>
-
-    <record id="portatil_view_tree" model="ir.ui.view">
-        <field name="name">portatil</field>
+    <record id="portatil_view_search" model="ir.ui.view">
+        <field name="name">portatil.view.search</field>
         <field name="model">portatil</field>
         <field name="arch" type="xml">
-            <tree string="">
-                <field name="modelo" />
-                <field name="marca" />
-                <field name="imagen" widget='image' />
-                <field name="resolucion" />
-                <field name="frecuencia" />
-                <field name="tamaño" />
-                <field name="peso" />
-                <field name="RAM" />
-                <field name="HDD" />
-                <field name="SSD" />
-                <field name="grafica" />
-                <field name="USB3" />
-                <field name="USB2" />
-                <field name="placa_base" />
-                <field name="lector_discos" />
-                <field name="tactil" />
-                <field name="tablet" />
-                <field name="wifi" />
-                <field name="cable_red" />
-                <field name="bluetooth" />
-                <field name="HDMI" />
-                <field name="VGA" />
-                <field name="DPORT" />
-                <field name="miniDPORT" />
-                <field name="thunderbolt" />
-                <field name="jack" />
-                <field name="SIM" />
-                <field name="cantidad" />
-            </tree>
+            <search>
+                <field name="modelo" string="Busca por modelo"/>
+                <field name="marca" string="Busca por marca"/>
+
+                <filter name="HDD" string="HDD igual a 500" domain="[('HDD', '=', '500')]"/>
+                <filter name="HDDD" string="HDD igual a 1000" domain="[('HDD', '=', '1000')]"/>
+                <filter name="HDDD" string="HDD superior a 1000" domain="[('HDD', '&gt;', '1000')]"/>
+                <filter name="RAM" string="RAM igual a 8" domain="[('RAM', '=', '8')]"/>
+                <filter name="RAM" string="RAM igual a 16" domain="[('RAM', '=', '16')]"/>
+                <filter name="RAM" string="RAM igual a 32" domain="[('RAM', '=', '32')]"/>
+                <filter name="SSD" string="SSD menor que 500" domain="[('SSD', '&lt;=', '500')]"/>
+                <filter name="SSD" string="SSD mayor que 500" domain="[('SSD', '&gt;', '500')]"/>
+                <searchpanel>
+                    <field name="marca" string="Marcas"/>
+                </searchpanel>
+            </search>
         </field>
     </record>
-
 </odoo>

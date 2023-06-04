@@ -1,11 +1,11 @@
 from odoo import models, fields, api
 
-class Producto(models.Model):
-    _name = "producto"
-    _rec_name = "portatil"
-    _description = "Producto"
+class perifericoProducto(models.Model):
+    _name = "ventaPerifericos"
+    _rec_name="perifericoProducto"
+    _description = "Periferico producto"
 
-    portatil = fields.Many2one('portatil', string='Portátil', requiered=True)
+    perifericoProducto = fields.Many2one('periferico', string='Periferico')
     precio = fields.Integer(string='Precio del producto', required=True)
     estado = fields.Selection([
         ('0', 'Recién Fabricado'),
@@ -14,12 +14,8 @@ class Producto(models.Model):
         ('3', 'Bastante Desgastado'),
         ('4', 'Deplorable')
     ], string='Estado del producto', required=True)
-    SO = fields.Selection([
-        ('0', 'Windows'),
-        ('1', 'Linux'),
-        ('2', 'Mac'),
-    ], string='SO', required=True)
     fechaSubida = fields.Date(string='Fecha de subida')
+
     vendedor = fields.Many2one('usuario', required=True)
-    comprador= fields.Many2one('usuario')
+
     venta = fields.Many2one('venta', string='Venta')

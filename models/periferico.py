@@ -1,19 +1,14 @@
 from odoo import models, fields, api
 
-class Devolucion(models.Model):
-    _name = 'devolucion'
-    _description = 'Devoluciones'
-
-    venta = fields.Many2one('venta', string='Venta Original', required=True)
-    fecha_devolucion = fields.Date(string='Fecha de Devolución', default=fields.Date.today(), required=True)
-    motivo_devolucion = fields.Char(string='Motivo de Devolución', required=True)
-
-    @api.model_create_single
-    def eliminar_registro_venta(self):
-        venta = self.venta
-        if venta:
-            venta.unlink()
-            return True
-        else:
-            return False
-
+class Periferico(models.Model):
+    _name = 'periferico'
+    _rec_name = 'periferico'
+    _description = 'periferico'
+    
+    periferico = fields.Char(string="Periferico", required=True)
+    modelo = fields.Char(string='Modelo', required=True)
+    marca = fields.Many2one('marca', required=True)
+    imagen = fields.Image()
+    estado = fields.Selection([('0', 'Recién Fabricado'), ('1', 'Casi Nuevo'), ('2', 'Algo Desgastado'), ('3', 'Bastante Desgastado'), ('4', 'Deplorable')], string='Estado del producto', required=True)
+    precio = fields.Integer(string='Precio del producto', required=True)
+    productos = fields.One2many('perifericos', 'periferico')

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="perifericoProducto_action" model="ir.actions.act_window">
+        <field name="name">perifericoProducto</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">perifericoProducto</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="perifericoProducto_view_form" model="ir.ui.view">
+        <field name="name">perifericoProducto</field>
+        <field name="model">perifericoProducto</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <group>
+                    <field name="perifericoProducto"/>
+                    <field name="precio" />
+                    <field name="estado" />
+                    <field name="fechaSubida" />
+                    <field name="vendedor" />
+                    <field name="venta" />
+                </group>
+            </form>
+        </field>
+        
+    </record>
+
+    <record id="perifericoProducto_view_tree" model="ir.ui.view">
+        <field name="name">perifericoProducto</field>
+        <field name="model">perifericoProducto</field>
+        <field name="arch" type="xml">
+            <tree string="">
+                    <field name="perifericoProducto" />
+                    <field name="precio" />
+                    <field name="estado" />
+                    <field name="fechaSubida" />
+                    <field name="vendedor" />
+                    <field name="venta" />
+            </tree>
+        </field>
+    </record>
+
+</odoo>

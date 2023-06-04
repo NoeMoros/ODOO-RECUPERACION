@@ -28,4 +28,15 @@
             </tree>
         </field>
     </record>
+        <record id="chat_view_search" model="ir.ui.view">
+        <field name="name">chat.view.search</field>
+        <field name="model">chat</field>
+        <field name="arch" type="xml">
+            <search>
+            <filter name="name"/>
+            <filter name="usuarios"/>
+            </search>
+        </field>
+    </record>
+
 </odoo>

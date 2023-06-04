@@ -1,10 +1,10 @@
 from odoo import models, fields, api
 
-class Devolucion(models.Model):
-    _name = 'devolucion'
-    _description = 'Devoluciones'
+class DevolucionPeriferico(models.Model):
+    _name = 'devoluciones'
+    _description = 'devolucionesPeriferico'
 
-    venta = fields.Many2one('venta', string='Venta Original', required=True)
+    venta = fields.Many2one('venta_periferico', string='Venta Original', required=True)
     fecha_devolucion = fields.Date(string='Fecha de Devolución', default=fields.Date.today(), required=True)
     motivo_devolucion = fields.Char(string='Motivo de Devolución', required=True)
 
